@@ -1,0 +1,18 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  // url is removed from here!
+}
+
+model UserModel {
+  id        String   @id
+  email     String   @unique
+  password  String
+  createdAt DateTime
+
+  @@map("users")
+}
