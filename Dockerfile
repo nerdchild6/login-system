@@ -18,4 +18,4 @@ EXPOSE 3000
 
 # --- FIX IS HERE ---
 # Instead of just running start, we Generate THEN Start
-CMD ["/bin/sh", "-c", "bunx prisma generate && bun run start:dev"]
+CMD ["/bin/sh", "-c", "bunx prisma generate && bunx prisma db push && bun run start:dev"]
